@@ -1,0 +1,10 @@
+import requests
+
+url = "https://drive.google.com/uc?export=download&id=1FRnbQqgK6S-mr9StNF5MurSaXhah9uoJ"
+output_path = "C:/Users/YourUsername/Downloads/sales_data.csv"  # Change this path if needed
+
+response = requests.get(url)
+with open(output_path, "wb") as f:
+    f.write(response.content)
+
+print("File downloaded successfully.")
